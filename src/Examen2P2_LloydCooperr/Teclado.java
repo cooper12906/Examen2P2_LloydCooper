@@ -1,13 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Examen2P2_LloydCooperr;
 
-/**
- *
- * @author CUSTOMER PC
- */
-public class Teclado {
+public class Teclado extends Parte {
+    private String material;
+    private String color;
+
+    public Teclado(String material, String color, int tiempoEnsamblaje) {
+        super(tiempoEnsamblaje);
+        this.material = material;
+        this.color = color;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Teclado{" + "material=" + material + ", color=" + color + '}';
+    }
+    
+    
     
 }

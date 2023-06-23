@@ -18,7 +18,5 @@ public class Parte {
     @Override
     public String toString() {
         return "Parte{" + "tiempoEnsamblaje=" + tiempoEnsamblaje + '}';
-    }
-    
-    
+    }    
 }

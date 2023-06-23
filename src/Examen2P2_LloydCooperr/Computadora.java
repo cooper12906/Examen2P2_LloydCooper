@@ -1,32 +1,20 @@
 package Examen2P2_LloydCooperr;
 
-import java.awt.Color;
+import java.util.ArrayList;
 
-/**
- *
- * @author CUSTOMER PC
- */
 public class Computadora {
     private String numeroSerie;
     private String year;
-    private Color color;
-    private String RAM;
-    private String discoDuro;
-    private String bateria;
-    private String teclado;
-    private String pantalla;
-    private String procesador;
+    private String color;
+    private String material;
+    private ArrayList<Parte> partes = new ArrayList();
 
-    public Computadora(String numeroSerie, String year, Color color, String RAM, String discoDuro, String bateria, String teclado, String pantalla, String procesador) {
+    public Computadora(String numeroSerie, String year, String color, String material, ArrayList <Parte> partes) {
         this.numeroSerie = numeroSerie;
         this.year = year;
         this.color = color;
-        this.RAM = RAM;
-        this.discoDuro = discoDuro;
-        this.bateria = bateria;
-        this.teclado = teclado;
-        this.pantalla = pantalla;
-        this.procesador = procesador;
+        this.material = material;
+        this.partes = partes;
     }
 
     public String getNumeroSerie() {
@@ -45,65 +33,33 @@ public class Computadora {
         this.year = year;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
-    public String getRAM() {
-        return RAM;
+    public String getMaterial() {
+        return material;
     }
 
-    public void setRAM(String RAM) {
-        this.RAM = RAM;
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
-    public String getDiscoDuro() {
-        return discoDuro;
+    public ArrayList<Parte> getPartes() {
+        return partes;
     }
 
-    public void setDiscoDuro(String discoDuro) {
-        this.discoDuro = discoDuro;
-    }
-
-    public String getBateria() {
-        return bateria;
-    }
-
-    public void setBateria(String bateria) {
-        this.bateria = bateria;
-    }
-
-    public String getTeclado() {
-        return teclado;
-    }
-
-    public void setTeclado(String teclado) {
-        this.teclado = teclado;
-    }
-
-    public String getPantalla() {
-        return pantalla;
-    }
-
-    public void setPantalla(String pantalla) {
-        this.pantalla = pantalla;
-    }
-
-    public String getProcesador() {
-        return procesador;
-    }
-
-    public void setProcesador(String procesador) {
-        this.procesador = procesador;
+    public void setPartes(ArrayList<Parte> partes) {
+        this.partes = partes;
     }
 
     @Override
     public String toString() {
-        return "Computadora{" + "numeroSerie=" + numeroSerie + ", year=" + year + ", color=" + color + ", RAM=" + RAM + ", discoDuro=" + discoDuro + ", bateria=" + bateria + ", teclado=" + teclado + ", pantalla=" + pantalla + ", procesador=" + procesador + '}';
+        return "Computadora{" + "numeroSerie=" + numeroSerie + ", year=" + year + ", color=" + color + ", material=" + material + ", partes=" + partes + '}';
     }
     
     
