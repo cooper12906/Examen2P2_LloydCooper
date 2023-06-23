@@ -482,11 +482,18 @@ public class frameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTecladoMouseClicked
 
     private void btnPantallaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPantallaMouseClicked
-        // TODO add your handling code here:
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿La pantalla es táctil?", "Confirmación", JOptionPane.YES_NO_OPTION);
+        boolean tactil = (respuesta == JOptionPane.YES_OPTION);
+        String tipo = JOptionPane.showInputDialog(this, "Ingrese el tipo de pantalla");
+        pantallas.add(new Pantalla(tactil, tipo, 5));
+        JOptionPane.showMessageDialog(this, "Pantalla creada correctamente");
     }//GEN-LAST:event_btnPantallaMouseClicked
 
     private void btnProcesadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProcesadorMouseClicked
-        // TODO add your handling code here:
+        int numeroNucleos = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el numero de nucleos del procesador"));
+        String velocidad = JOptionPane.showInputDialog(this, "Ingrese la velocidad del procesador");
+        procesadors.add(new Procesador(numeroNucleos, velocidad, 5));
+        JOptionPane.showMessageDialog(this, "Procesador creado correctamente");
     }//GEN-LAST:event_btnProcesadorMouseClicked
 
     /**
