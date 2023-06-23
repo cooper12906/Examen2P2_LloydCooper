@@ -1,16 +1,25 @@
 package Examen2P2_LloydCooperr;
 
-/**
- *
- * @author CUSTOMER PC
- */
-public class frameMain extends javax.swing.JFrame {
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
+public class frameMain extends javax.swing.JFrame {
+    private ArrayList<Tecnicos> tecnicos = new ArrayList();
+    private ArrayList<Computadora> computadoras = new ArrayList();
+    private ArrayList<RAM> RAM = new ArrayList();
+    private ArrayList<DiscoDuro> discosDuros = new ArrayList();
+    private ArrayList<Bateria> baterias = new ArrayList();
+    private ArrayList<Pantalla> pantallas = new ArrayList();
+    private ArrayList<Teclado> teclados = new ArrayList();
+    private ArrayList<Procesador> procesadors = new ArrayList();
+    
     /**
      * Creates new form frameMain
      */
     public frameMain() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -428,23 +437,48 @@ public class frameMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearTecnicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearTecnicoMouseClicked
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) table1.getModel();
+        String nombre = tfNombreTecnico.getText();
+        String edad = tfEdadTecnico.getText();
+        String genero = tfGeneroTecnico.getText();
+        
+        Object[] fila = {null,nombre};
+        
+        model.addRow(fila); 
+        
+        tecnicos.add(new Tecnicos(nombre, edad, genero));
+        JOptionPane.showMessageDialog(this, "Tecnico creado correctamente");
+        tfNombreTecnico.setText("");
+        tfEdadTecnico.setText("");
+        tfGeneroTecnico.setText("");
     }//GEN-LAST:event_btnCrearTecnicoMouseClicked
 
     private void btnRAMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRAMMouseClicked
-        // TODO add your handling code here:
+        int tam = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el tamaño de la RAM"));
+        String marca = JOptionPane.showInputDialog(this, "Ingrese la marca de la RAM");
+        RAM.add(new RAM(tam, marca, 5));
+        JOptionPane.showMessageDialog(this, "RAM creada correctamente");
     }//GEN-LAST:event_btnRAMMouseClicked
 
     private void btnDiscoDuroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDiscoDuroMouseClicked
-        // TODO add your handling code here:
+        int tam = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el tamaño del disco duro"));
+        String marca = JOptionPane.showInputDialog(this, "Ingrese la marca del disco duro");
+        discosDuros.add(new DiscoDuro(tam, marca, 5));
+        JOptionPane.showMessageDialog(this, "Disco duro creado correctamente");
     }//GEN-LAST:event_btnDiscoDuroMouseClicked
 
     private void btnBateriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBateriaMouseClicked
-        // TODO add your handling code here:
+        String capacidadHoras = JOptionPane.showInputDialog(this, "Ingrese la capacidad de la bateria");
+        String material = JOptionPane.showInputDialog(this, "Ingrese el material de la bateria");
+        baterias.add(new Bateria(capacidadHoras, material, 5));
+        JOptionPane.showMessageDialog(this, "Bateria creada correctamente");
     }//GEN-LAST:event_btnBateriaMouseClicked
 
     private void btnTecladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTecladoMouseClicked
-        // TODO add your handling code here:
+        String material = JOptionPane.showInputDialog(this, "Ingrese el material del teclado");
+        String color = JOptionPane.showInputDialog(this, "Ingrese el material del teclado");
+        teclados.add(new Teclado(material, color, 10));
+        JOptionPane.showMessageDialog(this, "Teclado creado correctamente");
     }//GEN-LAST:event_btnTecladoMouseClicked
 
     private void btnPantallaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPantallaMouseClicked
