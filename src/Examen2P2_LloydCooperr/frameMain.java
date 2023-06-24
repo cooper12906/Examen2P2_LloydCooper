@@ -826,18 +826,7 @@ public class frameMain extends javax.swing.JFrame {
         progressBarSimulacion.setMaximum(100);
         Hilo h = new Hilo(duracion, progressBarSimulacion,c,t);
         h.start();
-        if (rootPaneCheckingEnabled) {
-            
-        } else {
-            FileWriter fw = null;
-            BufferedWriter bw = null;
-            try {
-                fw = new FileWriter(file, true);
-                bw = new BufferedWriter(fw);
-                bw.write("Computadora" + c + "y tecnico" + t + "no se pudo armar");
-            } catch (Exception e) {
-            }
-        }
+        
     }//GEN-LAST:event_btnIniciarSimulacionMouseClicked
      
     

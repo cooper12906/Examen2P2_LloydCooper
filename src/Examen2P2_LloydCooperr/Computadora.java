@@ -9,7 +9,7 @@ public class Computadora {
     private String material;
     private ArrayList<Parte> partes = new ArrayList();
 
-    public Computadora(String numeroSerie, String year, String color, String material) {
+    public Computadora(String numeroSerie, String year, String color, String material, ArrayList<Parte> partes1) {
         this.numeroSerie = numeroSerie;
         this.year = year;
         this.color = color;

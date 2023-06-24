@@ -1,16 +1,21 @@
 package Examen2P2_LloydCooperr;
 
+import java.util.ArrayList;
+import javax.swing.JProgressBar;
+
 public class Hilo extends Thread {
     private int duracion;
     private JProgressBar progressBar;
     private Computadora computadora;
     private Tecnicos tecnico;
+    private ArrayList<Computadora> computadoras;
 
     public Hilo(int duracion, JProgressBar progressBar, Computadora computadora, Tecnicos tecnico) {
         this.duracion = duracion;
         this.progressBar = progressBar;
         this.computadora = computadora;
         this.tecnico = tecnico;
+        this.computadoras = computadoras;
     }
 
     @Override
@@ -28,27 +33,8 @@ public class Hilo extends Thread {
             }
         }
 
-        if (fallaEnsamblaje()) {
-            // Manejo de falla en el ensamblaje
-            System.out.println("Computadora " + computadora + " y técnico " + tecnico + " no se pudo armar");
-        } else {
-            // Computadora ensamblada correctamente
-            System.out.println("Computadora " + computadora + " ensamblada exitosamente por el técnico " + tecnico);
-        }
+        
     }
 
-    private boolean fallaEnsamblaje() {
-        // Lógica para determinar si se produce una falla en el ensamblaje basada en los porcentajes establecidos
-        int numComputadoras = frameMain.computadoras.size(); // Obtén la cantidad de computadoras ensambladas hasta el momento
-        
-        if (numComputadoras >= 1 && numComputadoras <= 5) {
-            return Math.random() <= 0.3;
-        } else if (numComputadoras >= 6 && numComputadoras <= 15) {
-            return Math.random() <= 0.22;
-        } else if (numComputadoras >= 16 && numComputadoras <= 30) {
-            return Math.random() <= 0.13;
-        } else {
-            return Math.random() <= 0.07;
-        }
-    }
+   
 }
