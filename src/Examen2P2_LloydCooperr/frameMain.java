@@ -39,13 +39,13 @@ public class frameMain extends javax.swing.JFrame {
         panelCrearComputadora = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         comboBoxRam = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
+        tfNumeroSerie = new javax.swing.JTextField();
         comboBoxProcesador = new javax.swing.JComboBox<>();
-        tfYear1 = new javax.swing.JTextField();
+        tfYear = new javax.swing.JTextField();
         comboBoxBateria = new javax.swing.JComboBox<>();
-        tfColor1 = new javax.swing.JTextField();
+        tfColor = new javax.swing.JTextField();
         comboBoxPantalla = new javax.swing.JComboBox<>();
-        tfMaterial1 = new javax.swing.JTextField();
+        tfMaterial = new javax.swing.JTextField();
         comboBoxTeclado = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         comboBoxDiscoDuro = new javax.swing.JComboBox<>();
@@ -82,6 +82,8 @@ public class frameMain extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         btnModificarTecnico = new javax.swing.JButton();
         comboBoxTecnicos = new javax.swing.JComboBox<>();
+        dialogSimulacion = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         btnCRUDs = new javax.swing.JButton();
@@ -147,6 +149,11 @@ public class frameMain extends javax.swing.JFrame {
         jLabel10.setText("Material");
 
         btnCrearComputadora.setText("Crear computadora");
+        btnCrearComputadora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCrearComputadoraMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCrearComputadoraLayout = new javax.swing.GroupLayout(panelCrearComputadora);
         panelCrearComputadora.setLayout(panelCrearComputadoraLayout);
@@ -167,11 +174,11 @@ public class frameMain extends javax.swing.JFrame {
                                 .addGroup(panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelCrearComputadoraLayout.createSequentialGroup()
                                         .addGroup(panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(tfYear1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
+                                            .addComponent(tfYear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                            .addComponent(tfNumeroSerie, javax.swing.GroupLayout.Alignment.LEADING))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE))
                                     .addGroup(panelCrearComputadoraLayout.createSequentialGroup()
-                                        .addComponent(tfColor1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfColor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelCrearComputadoraLayout.createSequentialGroup()
@@ -188,7 +195,7 @@ public class frameMain extends javax.swing.JFrame {
                                         .addComponent(comboBoxDiscoDuro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(112, 112, 112))
                             .addGroup(panelCrearComputadoraLayout.createSequentialGroup()
-                                .addComponent(tfMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(panelCrearComputadoraLayout.createSequentialGroup()
                         .addGroup(panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,7 +216,7 @@ public class frameMain extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(56, 56, 56)
                 .addGroup(panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfNumeroSerie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(comboBoxRam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxDiscoDuro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,19 +224,19 @@ public class frameMain extends javax.swing.JFrame {
                 .addGroup(panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tfYear1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(comboBoxBateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(comboBoxTeclado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(tfColor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxProcesador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelCrearComputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(tfMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(btnCrearComputadora, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -511,6 +518,30 @@ public class frameMain extends javax.swing.JFrame {
             .addComponent(jTabbedPane3)
         );
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 527, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout dialogSimulacionLayout = new javax.swing.GroupLayout(dialogSimulacion.getContentPane());
+        dialogSimulacion.getContentPane().setLayout(dialogSimulacionLayout);
+        dialogSimulacionLayout.setHorizontalGroup(
+            dialogSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dialogSimulacionLayout.setVerticalGroup(
+            dialogSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -580,7 +611,7 @@ public class frameMain extends javax.swing.JFrame {
         model.addRow(fila); 
         
         tecnicos.add(new Tecnicos(nombre, edad, genero));
-        JOptionPane.showMessageDialog(this, "Tecnico creado correctamente");
+        JOptionPane.showMessageDialog(dialogCRUDS, "Tecnico creado correctamente");
         tfNombreTecnico.setText("");
         tfEdadTecnico.setText("");
         tfGeneroTecnico.setText("");
@@ -588,58 +619,58 @@ public class frameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrearTecnicoMouseClicked
 
     private void btnRAMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRAMMouseClicked
-        int tam = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el tamaño de la RAM"));
-        String marca = JOptionPane.showInputDialog(this, "Ingrese la marca de la RAM");
+        int tam = Integer.parseInt(JOptionPane.showInputDialog(dialogCRUDS, "Ingrese el tamaño de la RAM"));
+        String marca = JOptionPane.showInputDialog(dialogCRUDS, "Ingrese la marca de la RAM");
         RAM.add(new RAM(tam, marca, 5));
-        JOptionPane.showMessageDialog(this, "RAM creada correctamente");
+        JOptionPane.showMessageDialog(dialogCRUDS, "RAM creada correctamente");
         String ramInfo = tam + "GB - " + marca;
         comboBoxRam.addItem(ramInfo);
     }//GEN-LAST:event_btnRAMMouseClicked
 
     private void btnDiscoDuroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDiscoDuroMouseClicked
-        int tam = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el tamaño del disco duro"));
-        String marca = JOptionPane.showInputDialog(this, "Ingrese la marca del disco duro");
+        int tam = Integer.parseInt(JOptionPane.showInputDialog(dialogCRUDS, "Ingrese el tamaño del disco duro"));
+        String marca = JOptionPane.showInputDialog(dialogCRUDS, "Ingrese la marca del disco duro");
         discosDuros.add(new DiscoDuro(tam, marca, 5));
-        JOptionPane.showMessageDialog(this, "Disco duro creado correctamente");
+        JOptionPane.showMessageDialog(dialogCRUDS, "Disco duro creado correctamente");
         String discoDuroInfo = tam + "GB - " + marca;
         comboBoxDiscoDuro.addItem(discoDuroInfo );
     }//GEN-LAST:event_btnDiscoDuroMouseClicked
 
     private void btnBateriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBateriaMouseClicked
-        String capacidadHoras = JOptionPane.showInputDialog(this, "Ingrese la capacidad de la bateria");
-        String material = JOptionPane.showInputDialog(this, "Ingrese el material de la bateria");
+        String capacidadHoras = JOptionPane.showInputDialog(dialogCRUDS, "Ingrese la capacidad de la bateria");
+        String material = JOptionPane.showInputDialog(dialogCRUDS, "Ingrese el material de la bateria");
         baterias.add(new Bateria(capacidadHoras, material, 5));
-        JOptionPane.showMessageDialog(this, "Bateria creada correctamente");
+        JOptionPane.showMessageDialog(dialogCRUDS, "Bateria creada correctamente");
         String bateriaInfo = capacidadHoras + "hrs" + material;
         comboBoxBateria.addItem(bateriaInfo);
     }//GEN-LAST:event_btnBateriaMouseClicked
 
     private void btnTecladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTecladoMouseClicked
-        String material = JOptionPane.showInputDialog(this, "Ingrese el material del teclado");
-        String color = JOptionPane.showInputDialog(this, "Ingrese el material del teclado");
+        String material = JOptionPane.showInputDialog(dialogCRUDS, "Ingrese el material del teclado");
+        String color = JOptionPane.showInputDialog(dialogCRUDS, "Ingrese el material del teclado");
         teclados.add(new Teclado(material, color, 10));
-        JOptionPane.showMessageDialog(this, "Teclado creado correctamente");
+        JOptionPane.showMessageDialog(dialogCRUDS, "Teclado creado correctamente");
         String tecladoInfo = material + "\n" + color;
         comboBoxTeclado.addItem(tecladoInfo);
     }//GEN-LAST:event_btnTecladoMouseClicked
 
     private void btnPantallaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPantallaMouseClicked
-        int respuesta = JOptionPane.showConfirmDialog(this, "¿La pantalla es táctil?", "Confirmación", JOptionPane.YES_NO_OPTION);
+        int respuesta = JOptionPane.showConfirmDialog(dialogCRUDS, "¿La pantalla es táctil?", "Confirmación", JOptionPane.YES_NO_OPTION);
         boolean tactil = (respuesta == JOptionPane.YES_OPTION);
-        String tipo = JOptionPane.showInputDialog(this, "Ingrese el tipo de pantalla");
+        String tipo = JOptionPane.showInputDialog(dialogCRUDS, "Ingrese el tipo de pantalla");
         pantallas.add(new Pantalla(tactil, tipo, 5));
-        JOptionPane.showMessageDialog(this, "Pantalla creada correctamente");
-        String pantallaInfo = tactil + "\n" + tipo;
+        JOptionPane.showMessageDialog(dialogCRUDS, "Pantalla creada correctamente");
+        String pantallaInfo = tactil + "\n\n" + tipo;
         comboBoxPantalla.addItem(pantallaInfo);
     }//GEN-LAST:event_btnPantallaMouseClicked
 
     private void btnProcesadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProcesadorMouseClicked
-        int numeroNucleos = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el numero de nucleos del procesador"));
-        String velocidad = JOptionPane.showInputDialog(this, "Ingrese la velocidad del procesador");
+        int numeroNucleos = Integer.parseInt(JOptionPane.showInputDialog(dialogCRUDS, "Ingrese el numero de nucleos del procesador"));
+        String velocidad = JOptionPane.showInputDialog(dialogCRUDS, "Ingrese la velocidad del procesador");
         procesadors.add(new Procesador(numeroNucleos, velocidad, 5));
-        JOptionPane.showMessageDialog(this, "Procesador creado correctamente");
-        String procesadorInfo = numeroNucleos + "\n" + velocidad + "GHz";
-        comboBoxTeclado.addItem(procesadorInfo);
+        JOptionPane.showMessageDialog(dialogCRUDS, "Procesador creado correctamente");
+        String procesadorInfo = numeroNucleos + "nucleos" + "\n" + velocidad + "GHz";
+        comboBoxProcesador.addItem(procesadorInfo);
     }//GEN-LAST:event_btnProcesadorMouseClicked
 
     private void btnModificarTecnicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarTecnicoMouseClicked
@@ -676,7 +707,7 @@ public class frameMain extends javax.swing.JFrame {
                 }
             }
         }
-        JOptionPane.showMessageDialog(this, "Técnico modificado correctamente");
+        JOptionPane.showMessageDialog(dialogCRUDS, "Técnico modificado correctamente");
     }//GEN-LAST:event_btnModificarTecnicoMouseClicked
 
     private void btnCRUDsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCRUDsMouseClicked
@@ -685,6 +716,47 @@ public class frameMain extends javax.swing.JFrame {
         dialogCRUDS.setLocationRelativeTo(this);
         dialogCRUDS.setVisible(true);
     }//GEN-LAST:event_btnCRUDsMouseClicked
+
+    private void btnCrearComputadoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearComputadoraMouseClicked
+        String numSerie = tfNumeroSerie.getText();
+        String year = tfEdadTecnico.getText();
+        String color = tfColor.getText();
+        String material = tfMaterial.getText();
+
+        int selectedIndexRam = comboBoxRam.getSelectedIndex();
+        int selectedIndexPantalla = comboBoxPantalla.getSelectedIndex();
+        int selectedIndexTeclado = comboBoxTeclado.getSelectedIndex();
+        int selectedIndexDiscoDuro = comboBoxDiscoDuro.getSelectedIndex();
+        int selectedIndexBateria = comboBoxBateria.getSelectedIndex();
+        int selectedIndexProcesador = comboBoxProcesador.getSelectedIndex();
+
+        ArrayList<Parte> partes = new ArrayList<>();
+
+        // Obtener los objetos de las ArrayList de partes utilizando los índices seleccionados
+        if (selectedIndexRam != -2) {
+            partes.add(RAM.get(selectedIndexRam));
+        }
+        if (selectedIndexPantalla != -2) {
+            partes.add(pantallas.get(selectedIndexPantalla));
+        }
+        if (selectedIndexTeclado != -2) {
+            partes.add(teclados.get(selectedIndexTeclado));
+        }
+        if (selectedIndexDiscoDuro != -2) {
+            partes.add(discosDuros.get(selectedIndexDiscoDuro));
+        }
+        if (selectedIndexBateria != -2) {
+            partes.add(baterias.get(selectedIndexBateria));
+        }
+        if (selectedIndexProcesador != -2) {
+            partes.add(procesadors.get(selectedIndexProcesador));
+        }
+
+        computadoras.add(new Computadora(numSerie, year, color, material, partes));
+
+        JOptionPane.showMessageDialog(null, "Computadora creada correctamente");
+
+    }//GEN-LAST:event_btnCrearComputadoraMouseClicked
 
     /**
      * @param args the command line arguments
@@ -741,6 +813,7 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboBoxTeclado;
     private javax.swing.JComboBox<String> comboBoxTecnicos;
     private javax.swing.JDialog dialogCRUDS;
+    private javax.swing.JDialog dialogSimulacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -757,10 +830,10 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel panelCrearComputadora;
     private javax.swing.JPanel panelCrearParte;
     private javax.swing.JPanel panelCrearTecnico;
@@ -768,14 +841,15 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel panelModificarTecnico;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JTable table1;
-    private javax.swing.JTextField tfColor1;
+    private javax.swing.JTextField tfColor;
     private javax.swing.JTextField tfEdadTecnico;
     private javax.swing.JTextField tfEdadTecnico1;
     private javax.swing.JTextField tfGeneroTecnico;
     private javax.swing.JTextField tfGeneroTecnico1;
-    private javax.swing.JTextField tfMaterial1;
+    private javax.swing.JTextField tfMaterial;
     private javax.swing.JTextField tfNombreTecnico;
     private javax.swing.JTextField tfNombreTecnico1;
-    private javax.swing.JTextField tfYear1;
+    private javax.swing.JTextField tfNumeroSerie;
+    private javax.swing.JTextField tfYear;
     // End of variables declaration//GEN-END:variables
 }
