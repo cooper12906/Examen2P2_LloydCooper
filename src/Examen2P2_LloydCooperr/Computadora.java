@@ -9,13 +9,15 @@ public class Computadora {
     private String material;
     private ArrayList<Parte> partes = new ArrayList();
 
-    public Computadora(String numeroSerie, String year, String color, String material, ArrayList <Parte> partes) {
+    public Computadora(String numeroSerie, String year, String color, String material) {
         this.numeroSerie = numeroSerie;
         this.year = year;
         this.color = color;
         this.material = material;
-        this.partes = partes;
     }
+
+    
+    
 
     public String getNumeroSerie() {
         return numeroSerie;

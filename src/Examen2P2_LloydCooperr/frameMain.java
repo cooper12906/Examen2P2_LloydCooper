@@ -1,5 +1,7 @@
 package Examen2P2_LloydCooperr;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -87,6 +89,8 @@ public class frameMain extends javax.swing.JFrame {
         comboBoxPCs = new javax.swing.JComboBox<>();
         comboBoxTecnicosSimulacion = new javax.swing.JComboBox<>();
         progressBarSimulacion = new javax.swing.JProgressBar();
+        btnIniciarSimulacion = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         btnCRUDs = new javax.swing.JButton();
@@ -523,30 +527,52 @@ public class frameMain extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
+        btnIniciarSimulacion.setText("Iniciar simulacion");
+        btnIniciarSimulacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIniciarSimulacionMouseClicked(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Simulacion");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(comboBoxPCs, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(comboBoxTecnicosSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(progressBarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnIniciarSimulacion)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(comboBoxPCs, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(comboBoxTecnicosSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(progressBarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jLabel16)))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxPCs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxTecnicosSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
+                .addGap(43, 43, 43)
                 .addComponent(progressBarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addComponent(btnIniciarSimulacion)
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout dialogSimulacionLayout = new javax.swing.GroupLayout(dialogSimulacion.getContentPane());
@@ -639,6 +665,7 @@ public class frameMain extends javax.swing.JFrame {
         tfEdadTecnico.setText("");
         tfGeneroTecnico.setText("");
         comboBoxTecnicos.addItem(nombre);
+        comboBoxTecnicosSimulacion.addItem(nombre);
     }//GEN-LAST:event_btnCrearTecnicoMouseClicked
 
     private void btnRAMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRAMMouseClicked
@@ -778,7 +805,7 @@ public class frameMain extends javax.swing.JFrame {
         computadoras.add(new Computadora(numSerie, year, color, material, partes));
 
         JOptionPane.showMessageDialog(null, "Computadora creada correctamente");
-
+        comboBoxPCs.addItem(numSerie);
     }//GEN-LAST:event_btnCrearComputadoraMouseClicked
 
     private void btnSimulacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSimulacionMouseClicked
@@ -788,6 +815,32 @@ public class frameMain extends javax.swing.JFrame {
         dialogSimulacion.setVisible(true);
     }//GEN-LAST:event_btnSimulacionMouseClicked
 
+    private void btnIniciarSimulacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSimulacionMouseClicked
+        Computadora c = (Computadora) comboBoxPCs.getSelectedItem();
+        Tecnicos t = (Tecnicos) comboBoxTecnicosSimulacion.getSelectedItem();
+        int duracion = 0;
+        ArrayList<Parte> partes = c.getPartes();
+        for (Parte parte : partes) {
+            duracion += parte.getTiempoEnsamblaje();
+        }
+        progressBarSimulacion.setMaximum(100);
+        Hilo h = new Hilo(duracion, progressBarSimulacion,c,t);
+        h.start();
+        if (rootPaneCheckingEnabled) {
+            
+        } else {
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            try {
+                fw = new FileWriter(file, true);
+                bw = new BufferedWriter(fw);
+                bw.write("Computadora" + c + "y tecnico" + t + "no se pudo armar");
+            } catch (Exception e) {
+            }
+        }
+    }//GEN-LAST:event_btnIniciarSimulacionMouseClicked
+     
+    
     /**
      * @param args the command line arguments
      */
@@ -829,6 +882,7 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JButton btnCrearComputadora;
     private javax.swing.JButton btnCrearTecnico;
     private javax.swing.JButton btnDiscoDuro;
+    private javax.swing.JButton btnIniciarSimulacion;
     private javax.swing.JButton btnModificarTecnico;
     private javax.swing.JButton btnPantalla;
     private javax.swing.JButton btnProcesador;
@@ -853,6 +907,7 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
