@@ -84,6 +84,9 @@ public class frameMain extends javax.swing.JFrame {
         comboBoxTecnicos = new javax.swing.JComboBox<>();
         dialogSimulacion = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
+        comboBoxPCs = new javax.swing.JComboBox<>();
+        comboBoxTecnicosSimulacion = new javax.swing.JComboBox<>();
+        progressBarSimulacion = new javax.swing.JProgressBar();
         jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         btnCRUDs = new javax.swing.JButton();
@@ -524,11 +527,26 @@ public class frameMain extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(comboBoxPCs, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(comboBoxTecnicosSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(progressBarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 527, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxPCs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxTecnicosSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(76, 76, 76)
+                .addComponent(progressBarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout dialogSimulacionLayout = new javax.swing.GroupLayout(dialogSimulacion.getContentPane());
@@ -558,6 +576,11 @@ public class frameMain extends javax.swing.JFrame {
         });
 
         btnSimulacion.setText("Simulacion");
+        btnSimulacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSimulacionMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -758,6 +781,13 @@ public class frameMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnCrearComputadoraMouseClicked
 
+    private void btnSimulacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSimulacionMouseClicked
+        dialogSimulacion.pack();
+        dialogSimulacion.setModal(true);
+        dialogSimulacion.setLocationRelativeTo(this);
+        dialogSimulacion.setVisible(true);
+    }//GEN-LAST:event_btnSimulacionMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -807,11 +837,13 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JButton btnTeclado;
     private javax.swing.JComboBox<String> comboBoxBateria;
     private javax.swing.JComboBox<String> comboBoxDiscoDuro;
+    private javax.swing.JComboBox<String> comboBoxPCs;
     private javax.swing.JComboBox<String> comboBoxPantalla;
     private javax.swing.JComboBox<String> comboBoxProcesador;
     private javax.swing.JComboBox<String> comboBoxRam;
     private javax.swing.JComboBox<String> comboBoxTeclado;
     private javax.swing.JComboBox<String> comboBoxTecnicos;
+    private javax.swing.JComboBox<String> comboBoxTecnicosSimulacion;
     private javax.swing.JDialog dialogCRUDS;
     private javax.swing.JDialog dialogSimulacion;
     private javax.swing.JLabel jLabel1;
@@ -840,6 +872,7 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel panelModificarPC;
     private javax.swing.JPanel panelModificarTecnico;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JProgressBar progressBarSimulacion;
     private javax.swing.JTable table1;
     private javax.swing.JTextField tfColor;
     private javax.swing.JTextField tfEdadTecnico;
